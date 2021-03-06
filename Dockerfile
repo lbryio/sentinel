@@ -1,4 +1,4 @@
-## Chain Watcher
+## Sentinel
 FROM ubuntu:18.04
 LABEL MAINTAINER="beamer"
 
@@ -11,9 +11,9 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 
 WORKDIR /usr/bin
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-COPY ./bin/watcher watcher
-RUN chmod +x ./watcher
+COPY ./bin/sentinel sentinel
+RUN chmod +x ./sentinel
 
 EXPOSE 6060
 STOPSIGNAL SIGINT
-CMD ./watcher
+CMD ./sentinel
