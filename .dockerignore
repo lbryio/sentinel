@@ -1,4 +1,4 @@
 # Ignore everything
 **
 # Allow files and directories
-!/bin/watcher
+!/bin/sentinel

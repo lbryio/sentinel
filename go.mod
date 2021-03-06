@@ -1,4 +1,4 @@
-module github.com/lbryio/chain-watcher
+module github.com/lbryio/sentinel
 
 go 1.15
 

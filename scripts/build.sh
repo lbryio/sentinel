@@ -18,14 +18,14 @@ set -e
 
 
 echo "== Compiling =="
-export IMPORTPATH="github.com/lbryio/chain-watcher"
+export IMPORTPATH="github.com/lbryio/sentinel"
 mkdir -p "$DIR/bin"
 go generate -v
 export VERSIONSHORT="${TRAVIS_COMMIT:-"$(git describe --tags --always --dirty)"}"
 export VERSIONLONG="${TRAVIS_COMMIT:-"$(git describe --tags --always --dirty --long)"}"
 export COMMITMSG="$(echo ${TRAVIS_COMMIT_MESSAGE:-"$(git show -s --format=%s)"} | tr -d '"' | head -n 1)"
-CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -v -o "./bin/watcher" -asmflags -trimpath="$DIR" -ldflags "-X ${IMPORTPATH}/meta.version=${VERSIONSHORT} -X \"${IMPORTPATH}/meta.commitMsg=${COMMITMSG}\""
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -v -o "./bin/sentinel" -asmflags -trimpath="$DIR" -ldflags "-X ${IMPORTPATH}/meta.version=${VERSIONSHORT} -X \"${IMPORTPATH}/meta.commitMsg=${COMMITMSG}\""
 
 echo "$(git describe --tags --always --dirty)" > ./bin/watcher.txt
-chmod +x ./bin/watcher
+chmod +x ./bin/sentinel
 exit 0

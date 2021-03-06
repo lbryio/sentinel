@@ -1,2 +1,2 @@
-# chain-watcher
+# sentinel
 Watcher of the Blockchain

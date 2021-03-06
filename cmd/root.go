@@ -4,11 +4,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/lbryio/chain-watcher/daemon"
-
-	"github.com/lbryio/chain-watcher/pools"
-
-	"github.com/lbryio/chain-watcher/env"
+	"github.com/lbryio/sentinel/daemon"
+	"github.com/lbryio/sentinel/env"
+	"github.com/lbryio/sentinel/pools"
 
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"

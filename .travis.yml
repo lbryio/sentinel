@@ -1,7 +1,7 @@
 os: linux
 dist: xenial
 language: go
-go_import_path: github.com/lbryio/dispendium
+go_import_path: github.com/lbryio/sentinel
 
 go:
   - 1.15

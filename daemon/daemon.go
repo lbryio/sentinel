@@ -7,7 +7,7 @@ import (
 
 	"github.com/lbryio/lbry.go/v2/extras/stop"
 
-	"github.com/lbryio/chain-watcher/pools"
+	"github.com/lbryio/sentinel/pools"
 )
 
 var stopper = stop.New(nil)

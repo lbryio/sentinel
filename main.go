@@ -1,6 +1,6 @@
 package main
 
-import "github.com/lbryio/chain-watcher/cmd"
+import "github.com/lbryio/sentinel/cmd"
 
 func main() {
 	cmd.Execute()

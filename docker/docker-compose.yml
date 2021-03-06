@@ -1,5 +1,5 @@
 version: "3"
 services:
-  watcher:
-    image: lbry/watcher:master
-    entrypoint: ./watcher -d
+  sentinel:
+    image: lbry/sentinel:master
+    entrypoint: ./sentinel -d
