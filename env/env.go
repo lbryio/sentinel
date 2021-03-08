@@ -8,10 +8,11 @@ import (
 
 // Config holds the environment configuration used by lighthouse.
 type Config struct {
-	CoinMineAPIKey string `env:"COINMINE_API_KEY"`
-	LbrycrdURL     string `env:"LBRYCRD_CONNECT" envDefault:""`
-	SlackHookURL   string `env:"SLACKHOOKURL"`
-	SlackChannel   string `env:"SLACKCHANNEL"`
+	CoinMineAPIKey    string `env:"COINMINE_API_KEY"`
+	MiningDutchAPIKey string `env:"MININGDUTCH_API_KEY"`
+	LbrycrdURL        string `env:"LBRYCRD_CONNECT" envDefault:""`
+	SlackHookURL      string `env:"SLACKHOOKURL"`
+	SlackChannel      string `env:"SLACKCHANNEL"`
 }
 
 // NewWithEnvVars creates an Config from environment variables

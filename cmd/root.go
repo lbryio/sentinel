@@ -34,6 +34,7 @@ var rootCmd = &cobra.Command{
 			logrus.Panic(err)
 		}
 		pools.CoinMineAPIKey = config.CoinMineAPIKey
+		pools.MiningDutchAPIKey = config.MiningDutchAPIKey
 		daemon.Start()
 	},
 }

@@ -18,6 +18,7 @@ const url = "https://www2.coinmine.pl/lbc/index.php?page=api&action=getpoolstatu
 
 // CoinMineAPIKey is the api key to use to access coinmine metrics
 var CoinMineAPIKey string
+var lastCoinMineResult *CoinMineResult
 
 func monitorCoinmine(parent *stop.Group) {
 	stopper := stop.New(parent)
@@ -29,7 +30,7 @@ func monitorCoinmine(parent *stop.Group) {
 		case <-ticker.C:
 			err := checkCoinMine()
 			if err != nil {
-				logrus.Error(err)
+				logrus.Error(errors.FullTrace(err))
 			}
 		}
 	}
@@ -55,6 +56,7 @@ func checkCoinMine() error {
 	if err != nil {
 		return errors.Err(err)
 	}
+	lastCoinMineResult = result
 	return nil
 }
 

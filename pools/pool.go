@@ -10,10 +10,9 @@ import (
 var CheckPeriod = 60
 var checkPeriod = time.Duration(CheckPeriod) * time.Second
 
-var stopper *stop.Group
-
-// MonitorPools kicks off the monitors for the different pools for mining LBRY
-func MonitorPools(parent *stop.Group) {
+// Monitor kicks off the monitors for the different pools for mining LBRY
+func Monitor(parent *stop.Group) {
 	stopper := stop.New(parent)
 	go monitorCoinmine(stopper)
+	go monitorMiningDutch(stopper)
 }
